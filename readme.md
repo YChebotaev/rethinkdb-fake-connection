@@ -3,19 +3,27 @@ rethinkdb-fake-connection
 
 Module that helps with promised connections to rethinkdb database.
 
+installation
+------------
+
+there is no npm package for this module, use `package.json` manually
+
+```bash
+npm install --save YChebotaev/rethinkdb-fake-connection
+```
+
 usage
 -----
 
 ```javascript
-  var r = require('rethinkdb');
-  require('rethinkdb-fake-connection').patch(r);
+var r = require('rethinkdb');
+require('rethinkdb-fake-connection').patch(r);
 
-  var fakeConnection = r.connect();
+var fakeConnection = r.connect();
 
-  r.dbList().run(fakeConnection, function(err, dbList){
-    console.log(err, dbList); // null, ["test"]
-  });
-
+r.dbList().run(fakeConnection, function(err, dbList){
+  console.log(err, dbList); // null, ["test"]
+});
 ```
 
 caveats
